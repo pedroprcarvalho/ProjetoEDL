@@ -1,0 +1,40 @@
+{% extends 'Classroom/home_page.html' %}
+
+{% block content %}
+
+    <form align="center" action="submit" method="POST">{% csrf_token %}
+
+        <label>CPF </label>
+        <input type="text" name="cpf">
+        
+        <br>
+
+        <label>Nome</label>
+        <input type="text" name="nome">
+
+        <br>
+
+        <label>Matricula</label>
+        <input type="text" name="matricula">
+
+        <br>
+
+        <label>Email</label>
+        <input type="text" name="email">
+
+        <br>
+
+        <label>Nota P1</label>
+        <input type="number" name="nota1">
+        <br>
+        <label>Nota P2</label>
+        <input type="number" name="nota2">
+        <br>
+        <button type="submit">Registrar</button>
+    </form>
+    {% for message in messages %}
+        <div align="center">
+            <strong>Erro: </strong>{{ message }}
+        </div>
+    {% endfor %}
+{% endblock %}

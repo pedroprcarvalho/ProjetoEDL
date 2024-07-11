@@ -1,0 +1,28 @@
+{% extends 'Classroom/home_page.html' %}
+
+{% block content %}
+    <table align="center" border="1px" style="size: A3">
+        <thead style="background: orange" >
+            <th>Nome</th>
+            <th>CPF</th>
+            <th>Matricula</th>
+            <th>Email</th>
+            <th>Nota P1</th>
+            <th>Nota P2</th>
+        </thead>
+        <tbody>
+            {% for dado in lista_dados  %}
+                <tr>
+                    <td>{{ dado.nome }}</td>
+                    <td>{{ dado.cpf }}</td>
+                    <td>{{ dado.matricula }}</td>
+                    <td>{{ dado.email }}</td>
+                    <td id="notas">{{ dado.nota1 }}</td>
+                    <td id="notas">{{ dado.nota2 }}</td>
+                </tr>
+            {% endfor %}
+            
+        </tbody>
+    </table>
+    <h2 align="center">Media da turma: {{media}}</h2>
+{% endblock %}

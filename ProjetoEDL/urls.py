@@ -21,9 +21,16 @@ from Classroom import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home_page),
+
     path('singin/', views.show_singin),
     path('singin/submit',views.submit_sing_in ),
     path('login/', views.login_page),
     path('login/submit', views.login_submit),
-    path ('logout/', views.logout_user),
+    path('logout/', views.logout_user),
+
+    path('cadastrar/', views.tela_cadastro),
+    path('cadastrar/submit', views.cadastrar),
+
+    path('listar/', views.listar_aluno),
+
 ]
